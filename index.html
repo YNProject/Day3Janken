@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>じゃんけん</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="shortcut icon" href="img/jankenfavicon.ico" type="image/x-icon">
+  <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+</head>
+
+<body>
+
+  <h1 class="title">ゆっくりじゃんけん</h1>
+
+<!-- ゲーム設定エリア -->
+<div id="gameSettings">
+  <!-- ゲームモード選択 -->
+  <div class="settingPair">
+    <label for="gameMode">ゲームモード選択：</label>
+    <select id="gameMode">
+      <option value="normal">じゃんけん</option>
+      <option value="double">両手じゃんけん</option>
+    </select>
+  </div>
+
+  <!-- 勝利回数設定 -->
+  <div class="settingPair">
+    <label for="winTarget">勝利回数設定：</label>
+    <input type="number" id="winTarget" min="1" placeholder="3">
+  </div>
+
+  <!-- ゲーム開始ボタン -->
+  <div class="settingPair">
+    <button id="startGame">ゲーム開始</button>
+  </div>
+</div>
+
+
+
+
+  <!-- スコア表示 -->
+  <div id="score">あなた：0　コンピューター：0</div>
+
+  <!-- キャラ画像 -->
+  <img id="playerImage" src="img/reimu/def.png" alt="自">
+  <img id="cpuImage" src="img/marisa/def.png" alt="CPU">
+
+  <!-- 選択した手の画像表示 -->
+  <div id="handDisplay">
+    <img id="playerHandImage" src="" alt="自分の手" style="display: none;">
+    <img id="cpuHandImage" src="" alt="CPUの手" style="display: none;">
+  </div>
+
+  <!-- 通常じゃんけんエリア -->
+  <div id="gameArea" style="display: none;">
+    <div id="chant"></div>
+    <div id="buttons">
+      <button data-choice="グー">グー</button>
+      <button data-choice="チョキ">チョキ</button>
+      <button data-choice="パー">パー</button>
+    </div>
+    <div id="result"></div>
+    <button id="resetGame">最初から</button>
+  </div>
+
+  <!-- 両手じゃんけんエリア -->
+  <div id="doubleArea" style="display: none;">
+    <div id="chantDouble"></div>
+
+    <!-- 対戦フィールド -->
+    <div id="battleField">
+      <!-- CPU側 -->
+      <div class="playerRow cpu">
+        <span class="playerLabel">CPU：</span>
+        <div class="handGroup">
+          <span class="handLabel">右手</span>
+          <button class="compRight" data-hand="right" data-choice="グー" disabled>グー</button>
+          <button class="compRight" data-hand="right" data-choice="チョキ" disabled>チョキ</button>
+          <button class="compRight" data-hand="right" data-choice="パー" disabled>パー</button>
+        </div>
+        <div class="handGroup">
+          <span class="handLabel">左手</span>
+          <button class="compLeft" data-hand="left" data-choice="グー" disabled>グー</button>
+          <button class="compLeft" data-hand="left" data-choice="チョキ" disabled>チョキ</button>
+          <button class="compLeft" data-hand="left" data-choice="パー" disabled>パー</button>
+        </div>
+      </div>
+
+<!-- 両手じゃんけんの手画像表示 -->
+<div id="doubleHandImages">
+  <div class="userHands">
+    <img id="userRightHandImage" src="" alt="自分の右手" style="display: none;">
+    <img id="userLeftHandImage" src="" alt="自分の左手" style="display: none;">
+  </div>
+  <div class="cpuHands">
+    <img id="cpuRightHandImage" src="" alt="CPUの右手" style="display: none;">
+    <img id="cpuLeftHandImage" src="" alt="CPUの左手" style="display: none;">
+  </div>
+</div>
+
+
+      <!-- プレイヤー側 -->
+      <div class="playerRow user">
+        <span class="playerLabel">自分：</span>
+        <div class="handGroup">
+          <span class="handLabel">右手</span>
+          <button data-hand="right" data-choice="グー">グー</button>
+          <button data-hand="right" data-choice="チョキ">チョキ</button>
+          <button data-hand="right" data-choice="パー">パー</button>
+        </div>
+        <div class="handGroup">
+          <span class="handLabel">左手</span>
+          <button data-hand="left" data-choice="グー">グー</button>
+          <button data-hand="left" data-choice="チョキ">チョキ</button>
+          <button data-hand="left" data-choice="パー">パー</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- 引く手の選択 -->
+    <div id="pullChoice" style="display: none;">
+      <p>どっちひくの？</p>
+      <button data-pull="right">右手をひく</button>
+      <button data-pull="left">左手をひく</button>
+    </div>
+
+    <!-- 結果表示とリセットボタン -->
+    <div id="resetWrapper">
+      <button id="resetGameDouble">最初から</button>
+    </div>
+  </div>
+
+  <script src="janken.js"></script>
+</body>
+
+</html>
