@@ -4,7 +4,7 @@
 - 「通常のじゃんけん」と「両手じゃんけん」を選んで遊ぶことができます
 
 ## ③アプリのデプロイURL
-https://github.com/YNProject/Day3Janken
+https://ynproject.github.io/Day3Janken/
 
 ## ④アプリのログイン用IDまたはPassword（ある場合）
 - ID: 今回無し
