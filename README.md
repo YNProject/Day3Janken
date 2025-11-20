@@ -19,7 +19,13 @@ https://ynproject.github.io/Day3Janken/
 - CSSが難しい。バランスがあまりよくないので練習したい。
 
 ## ⑦フリー項目（感想、シェアしたいこと等なんでも）
-ゆっくりの画像とじゃんけんの手の画像とフォントは.gitignoreで除外しています。
+- ゆっくりの画像とじゃんけんの手の画像とフォントは.gitignoreで除外しています。
+
+- 素材リンク
+ゆっくり立ち絵：　http://www.nicotalk.com/charasozai_kt.html
+手の画像：　　　　https://commons.nicovideo.jp/search?tags=%E3%81%98%E3%82%83%E3%82%93%E3%81%91%E3%82%93
+けいふぉんと！：　https://font.sumomo.ne.jp/font_1.html
+
 2つのゲームモードのプレイイメージです
 
 | 通常じゃんけん | 両手じゃんけん |
